@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)file:///C:/Users/User/Desktop/index.html# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flipkart - Online Shopping</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f3f6;
+    color: #212121;
+    padding-bottom: 65px;
+}
+
+/* HEADER */
+header {
+    background: #2874f0;
+    padding: 12px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.logo small {
+    display: block;
+    font-size: 10px;
+}
+
+.logo b {
+    color: #ffe500;
+}
+
+.login {
+    background: white;
+    color: #2874f0;
+    padding: 7px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.icon {
+    font-size: 23px;
+    color: white;
+    text-decoration: none;
+}
+
+/* SEARCH */
+.search {
+    display: flex;
+    background: white;
+    padding: 11px;
+    border-radius: 3px;
+    gap: 10px;
+}
+
+.search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+/* CATEGORIES */
+.categories {
+    display: flex;
+    overflow-x: auto;
+    background: white;
+    padding: 12px 5px;
+    gap: 15px;
+    scrollbar-width: none;
+}
+
+.categories::-webkit-scrollbar {
+    display: none;
+}
+
+.categories a {
+    min-width: 65px;
+    text-align: center;
+    text-decoration: none;
+    color: #212121;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.categories img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 6px;
+}
+
+/* BANNER */
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 15px;
+    min-height: 155px;
+    background: linear-gradient(110deg, #ffe7a3, #ffb9a8);
+    border-radius: 5px;
+}
+
+.banner-text {
+    flex: 1;
+}
+
+.banner-text p {
+    color: #b12704;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.banner h1 {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.banner h2 {
+    color: #b12704;
+    font-size: 22px;
+    margin-bottom: 7px;
+}
+
+.banner-text span {
+    font-size: 11px;
+}
+
+.banner img {
+    width: 42%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+/* OFFERS */
+.offers {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    padding: 15px 10px;
+    background: white;
+    margin-bottom: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* PRODUCTS */
+.section {
+    background: white;
+    margin-bottom: 10px;
+    padding: 15px 10px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    font-size: 17px;
+}
+
+.view-all {
+    background: #2874f0;
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.product {
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background: white;
+}
+
+.product img {
+    width: 100%;
+    height: 135px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.product h3 {
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.price {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.price del {
+    font-size: 11px;
+    color: #878787;
+    font-weight: normal;
+}
+
+.discount {
+    color: #388e3c;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.rating {
+    color: #555;
+    font-size: 11px;
+}
+
+/* BOTTOM NAVIGATION */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-around;
+    padding: 9px 0;
+    z-index: 200;
+}
+
+.bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: #555;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.bottom-nav span {
+    font-size: 22px;
+}
+
+.bottom-nav .active {
+    color: #2874f0;
+}
+
+/* FOOTER */
+footer {
+    background: #172337;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+/* TABLET */
+@media (min-width: 600px) {
+    .products {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .product img {
+        height: 180px;
+    }
+
+    .banner {
+        min-height: 220px;
+        padding: 25px;
+    }
+
+    .banner h1 {
+        font-size: 30px;
+    }
+
+    .banner img {
+        height: 170px;
+    }
+
+    .categories {
+        justify-content: space-around;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 900px) {
+    body {
+        max-width: 1400px;
+        margin: auto;
+        padding-bottom: 0;
+    }
+
+    header {
+        padding: 15px 25px;
+    }
+
+    .top-header {
+        justify-content: flex-start;
+        gap: 25px;
+    }
+
+    .logo {
+        margin-right: 20px;
+    }
+
+    .search {
+        flex: 1;
+    }
+
+    .banner {
+        min-height: 270px;
+        padding: 35px;
+    }
+
+    .banner h1 {
+        font-size: 40px;
+    }
+
+    .banner h2 {
+        font-size: 32px;
+    }
+
+    .banner img {
+        width: 35%;
+        height: 220px;
+    }
+
+    .products {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .product img {
+        height: 200px;
+    }
+
+    .section {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    .bottom-nav {
+        display: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="top-header">
+        <div class="logo">
+            Flipkart
+            <small>Explore <b>Plus ✦</b></small>
+        </div>
+
+        <a href="file:///C:/Users/User/Desktop/index.html#" class="login">Login</a>
+        <a href="file:///C:/Users/User/Desktop/index.html#cart" class="icon">🛒</a>
+        <a href="file:///C:/Users/User/Desktop/index.html#" class="icon">⋮</a>
+    </div>
+
+    <div class="search">
+        <span>🔍</span>
+        <input type="search" placeholder="Search for products, brands and more">
+    </div>
+</header>
+
+<!-- CATEGORIES -->
+<nav class="categories">
+    <a href="file:///C:/Users/User/Desktop/index.html#mobiles">
+        <img src="./Flipkart - Online Shopping_files/2874f0" alt="Mobiles">
+        <div>Mobiles</div>
+    </a>
+
+    <a href="file:///C:/Users/User/Desktop/index.html#fashion">
+        <img src="./Flipkart - Online Shopping_files/c2185b" alt="Fashion">
+        <div>Fashion</div>
+    </a>
+
+    <a href="file:///C:/Users/User/Desktop/index.html#electronics">
+        <img src="./Flipkart - Online Shopping_files/3949ab" alt="Electronics">
+        <div>Electronics</div>
+    </a>
+
+    <a href="file:///C:/Users/User/Desktop/index.html#home">
+        <img src="./Flipkart - Online Shopping_files/00897b" alt="Home">
+        <div>Home</div>
+    </a>
+
+    <a href="file:///C:/Users/User/Desktop/index.html#appliances">
+        <img src="./Flipkart - Online Shopping_files/ef6c00" alt="Appliances">
+        <div>Appliances</div>
+    </a>
+
+    <a href="file:///C:/Users/User/Desktop/index.html#beauty">
+        <img src="./Flipkart - Online Shopping_files/8e24aa" alt="Beauty">
+        <div>Beauty</div>
+    </a>
+</nav>
+
+<!-- PROMOTIONAL BANNER -->
+<section class="banner">
+    <div class="banner-text">
+        <p>BIG SAVING DAYS</p>
+        <h1>Super Shopping Sale!</h1>
+        <h2>Up to 80% OFF</h2>
+        <span>Discover amazing deals today</span>
+    </div>
+
+    <img src="./Flipkart - Online Shopping_files/photo-1607082349566-187342175e2f" alt="Shopping sale">
+</section>
+
+<!-- OFFERS -->
+<div class="offers">
+    <span>⚡ TOP DEALS</span>
+    <span>🎁 SPECIAL OFFERS</span>
+    <span>🚚 GREAT SAVINGS</span>
+</div>
+
+<!-- MOBILES -->
+<section class="section" id="mobiles">
+    <div class="section-heading">
+        <h2>Best Deals on Mobiles</h2>
+        <a href="file:///C:/Users/User/Desktop/index.html#mobiles" class="view-all">View All ❯</a>
+    </div>
+
+    <div class="products">
+        <article class="product">
+            <img src="./Flipkart - Online Shopping_files/photo-1592899677977-9c10ca588bbd" alt="Smartphone">
+            <h3>Smartphone</h3>
+            <p class="price">₹12,999 <del>₹18,999</del></p>
+            <p class="discount">31% off</p>
+            <p class="rating">⭐ 4.3 | Great value</p>
+        </article>
+
+        <article class="product">
+            <img src="./Flipkart - Online Shopping_files/photo-1511707171634-5f897ff02aa9" alt="Premium smartphone">
+            <h3>Premium Smartphone</h3>
+            <p class="price">₹19,999 <del>₹27,999</del></p>
+            <p class="discount">28% off</p>
+            <p class="rating">⭐ 4.4 | Bestseller</p>
+        </article>
+    </div>
+</section>
+
+<!-- ELECTRONICS -->
+<section class="section" id="electronics">
+    <div class="section-heading">
+        <h2>Electronics &amp; Gadgets</h2>
+        <a href="file:///C:/Users/User/Desktop/index.html#electronics" class="view-all">View All ❯</a>
+    </div>
+
+    <div class="products">
+        <article class="product">
+            <img src="./Flipkart - Online Shopping_files/photo-1505740420928-5e560c06d30e" alt="Headphones">
+            <h3>Wireless Headphones</h3>
+            <p class="price">₹1,499 <del>₹2,999</del></p>
+            <p class="discount">50% off</p>
+            <p class="rating">⭐ 4.2 | Popular</p>
+        </article>
+
+        <article class="product">
+            <img src="./Flipkart - Online Shopping_files/photo-1523275335684-37898b6baf30" alt="Smartwatch">
+            <h3>Smartwatch</h3>
+            <p class="price">₹1,999 <del>₹4,999</del></p>
+            <p class="discount">60% off</p>
+            <p class="rating">⭐ 4.1 | Trending</p>
+        </article>
+
+        <article class="product">
+            <img src="./Flipkart - Online Shopping_files/photo-1496181133206-80ce9b88a853" alt="Laptop">
+            <h3>Laptop</h3>
+            <p class="price">₹44,999 <del>₹59,999</del></p>
+            <p class="discount">25% off</p>
+            <p class="rating">⭐ 4.5 | Top rated</p>
+        </article>
+
+        <article class="product">
+            <img src="./Flipkart - Online Shopping_files/photo-1583394838336-acd977736f90" alt="Earbuds">
+            <h3>Wireless Earbuds</h3>
+            <p class="price">₹999 <del>₹1,999</del></p>
+            <p class="discount">50% off</p>
+            <p class="rating">⭐ 4.0 | Great deal</p>
+        </article>
+    </div>
+</section>
+
+<!-- FASHION -->
+<section class="section" id="fashion">
+    <div class="section-heading">
+        <h2>Fashion &amp; Lifestyle</h2>
+        <a href="file:///C:/Users/User/Desktop/index.html#fashion" class="view-all">View All ❯</a>
+    </div>
+
+    <div class="products">
+        <article class="product">
+            <img src="./Flipkart - Online Shopping_files/photo-1521572163474-6864f9cf17ab" alt="T-shirt">
+            <h3>Casual T-Shirt</h3>
+            <p class="price">₹399 <del>₹999</del></p>
+            <p class="discount">60% off</p>
+            <p class="rating">⭐ 4.2 | Trending</p>
+        </article>
+
+        <article class="product">
+            <img src="./Flipkart - Online Shopping_files/photo-1542291026-7eec264c27ff" alt="Sports shoes">
+            <h3>Sports Shoes</h3>
+            <p class="price">₹1,299 <del>₹2,999</del></p>
+            <p class="discount">57% off</p>
+            <p class="rating">⭐ 4.3 | Popular</p>
+        </article>
+    </div>
+</section>
+
+<!-- HOME & LIVING -->
+<section class="section" id="home">
+    <div class="section-heading">
+        <h2>Home &amp; Living</h2>
+        <a href="file:///C:/Users/User/Desktop/index.html#home" class="view-all">View All ❯</a>
+    </div>
+
+    <div class="products">
+        <article class="product">
+            <img src="./Flipkart - Online Shopping_files/photo-1505693416388-ac5ce068fe85" alt="Bedroom furniture">
+            <h3>Bedroom Furniture</h3>
+            <p class="price">₹8,999 <del>₹14,999</del></p>
+            <p class="discount">40% off</p>
+            <p class="rating">⭐ 4.1 | Stylish</p>
+        </article>
+
+        <article class="product">
+            <img src="./Flipkart - Online Shopping_files/photo-1600210492486-724fe5c67fb0" alt="Home decor">
+            <h3>Home Decor</h3>
+            <p class="price">₹799 <del>₹1,499</del></p>
+            <p class="discount">46% off</p>
+            <p class="rating">⭐ 4.2 | Best value</p>
+        </article>
+    </div>
+</section>
+
+<!-- APPLIANCES & BEAUTY -->
+<section class="section" id="appliances">
+    <div class="section-heading">
+        <h2>Appliances &amp; Beauty</h2>
+        <a href="file:///C:/Users/User/Desktop/index.html#appliances" class="view-all">View All ❯</a>
+    </div>
+
+    <div class="products">
+        <article class="product">
+            <img src="./Flipkart - Online Shopping_files/photo-1571175443880-49e1d25b2bc5" alt="Home appliance">
+            <h3>Home Appliance</h3>
+            <p class="price">₹12,499 <del>₹17,999</del></p>
+            <p class="discount">30% off</p>
+            <p class="rating">⭐ 4.2 | Popular</p>
+        </article>
+
+        <article class="product" id="beauty">
+            <img src="./Flipkart - Online Shopping_files/photo-1596462502278-27bfdc403348" alt="Beauty products">
+            <h3>Beauty Products</h3>
+            <p class="price">₹499 <del>₹999</del></p>
+            <p class="discount">50% off</p>
+            <p class="rating">⭐ 4.1 | Trending</p>
+        </article>
+    </div>
+</section>
+
+<!-- BOTTOM NAVIGATION -->
+<nav class="bottom-nav">
+    <a href="file:///C:/Users/User/Desktop/index.html#" class="active">
+        <span>⌂</span>
+        Home
+    </a>
+
+    <a href="file:///C:/Users/User/Desktop/index.html#mobiles">
+        <span>▦</span>
+        Categories
+    </a>
+
+    <a href="file:///C:/Users/User/Desktop/index.html#">
+        <span>♙</span>
+        Account
+    </a>
+
+    <a href="file:///C:/Users/User/Desktop/index.html#cart">
+        <span>🛒</span>
+        Cart
+    </a>
+</nav>
+
+<footer>
+    <p>Flipkart-inspired shopping website demo.</p>
+    <p>Sample products, prices and offers are for demonstration only.</p>
+</footer>
+
+
+
+</body></html>
